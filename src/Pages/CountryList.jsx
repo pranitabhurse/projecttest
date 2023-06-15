@@ -8,7 +8,7 @@ const CountryList = ()=>{
 
         var options = {
             method: 'GET',
-            //  url: 'https://domastic.ebankapi.org/api/login',
+            
             headers:
             {
                 'content-type': 'application/json',

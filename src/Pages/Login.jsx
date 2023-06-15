@@ -21,7 +21,7 @@ const LoginScreen = () => {
     
         var options = {
           method: 'POST',
-          //  url: 'https://domastic.ebankapi.org/api/login',
+      
           headers:
           {
             'content-type': 'application/json',

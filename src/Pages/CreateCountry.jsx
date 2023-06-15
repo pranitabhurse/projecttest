@@ -26,7 +26,7 @@ const CountryScreen = () => {
 
         var options = {
             method: 'POST',
-            //  url: 'https://domastic.ebankapi.org/api/login',
+           
             headers:
             {
                 'Content-Type': 'application/json',
@@ -81,7 +81,6 @@ const CountryScreen = () => {
 
 
 
-// update country
 
   
 
