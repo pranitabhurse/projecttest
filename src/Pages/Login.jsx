@@ -81,7 +81,7 @@ const LoginScreen = () => {
                             <input type="password" placeholder="password" value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
                            {!loading && <button onClick={submit}>login</button>}
                            {loading &&  <button> <i className="fa fa-spinner fa-spin"/></button>}
-                            <p className="message">Not registered? <Link to="/create-country">Create Country</Link></p>
+                            <p className="message"> <Link to="/create-country">Create Country</Link></p>
                         </div>
                     </div>
                 </div>

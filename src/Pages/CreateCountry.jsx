@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './Pages.css'
 import { Link } from "react-router-dom";
+import CountryList from "./CountryList";
 
 
 
@@ -12,6 +13,10 @@ const CountryScreen = () => {
     const [data, setData] = useState()
     const [loading, setLoading] = useState()
     const [alertMessage, setAlertMessage] = useState()
+
+
+//  create country
+
     const submit = async () => {
 
         setAlertMessage('')
@@ -75,49 +80,10 @@ const CountryScreen = () => {
     }
 
 
-    const update = async () => {
 
+// update country
 
-
-        setLoading(true)
-
-        var options = {
-            method: 'POST',
-            //  url: 'https://domastic.ebankapi.org/api/login',
-            headers:
-            {
-                'content-type': 'application/json',
-                'Authorisation': "Bearer 91KJpxThaD3FEGOTrxhjGflTtq8ruP74AakXjKkn5Sh0dL59A1DbrHu1AaIaJ50EOQ9EJppISK7m4Q2ScdjC+YJB0DXD6AyZgJLDbmHk03FL3AY3NrSSB97bkniyWKRhPPAfJMhuscAlfLxLGxGsIHRXBC83XNuZoqiAIGqlyObQmohtgCzQDA1rgy4xeUdHWyt9OJ0LqCyySzDtJepWh1IKOcfxy8WqflhjCfztGLlrHj+sqpRmqano/Ef1T77gRMEYYrMva6ifiigqUTLnD4S7p7uFa+IIQ1qHMK7ud5xUZZ/P8a38W2W8DBxuRBTKi5Kwd5KU5wSeOVSTgEKnNmr/UGFevbwdS0c99cYa7TdWQjpXNCwfWdipdFwT6d+8sIN9ZLG8btKuzdp/41UuXxJwMaQbVLqYaRZBqq0lOO4TEYEGMIKoGSyb5ZaR26Bw9z9mwladimihgJ7BSTdf7BNunryat4PYF+XJfNeekOCnKy7B0pAs0m3urbBlSAdJwaDRPbKPLJuspjRbkXyMNhM4JaVOfCVz3d/wo2VecSdjChSydR9A8CEk+LjblQqNCBhtqs05PtO68GqTatnSnajfkDEijF09kyTlxEYrq0amfuwPQu/NfbKrZKzPDPYKOTPyD/WfRX0VYpb92k9ySHgTdDq33ypdtrkcNUt7cjrO3+EZo9ydVHs+bixYJsktutk3jcWQUMBv44jBZLkpKVu2JZlED5X7taH7chvOYoH1Bv/szeuPiALpFtUI71enciOkmX6CFZTyF280ZwDwt/wsHQVQ6w9APMNtvOHfy9CHSbkcmr1wND8o52NcT+A/IOGYZb/jHP5F9Y5KHMjBCABFoolb5taeUiCW/TOuzsdbT04affocjaw5H0NDeZLcSX5A1qM+rwtuixeuxGgXe/Ll/W71ZJRz4tZzNJOW5nSeJffzU4nb0nJOf55GhMlkrgpuPyXbQalbwzFnPz4z2aeayNq/xdsOi1X33s0blvrlVPFgYToVKe7oKrx8n4KoLq+y2YcTbkd1yT3ePWCxGi+8uvBFpUbaFVj9iTnPaDH9x++ZEnDpiK85AH8D7cmxjopn5INQworwdspvK/LwhlenQPA1nIdQ/RQR4cC6YJP1XUfgYbWMvX+Q/5aQD36UTrOizqRAxpzIb4LfHK7QL/8EVnk0HeNdpTLZwdTF/Ns="
-
-            },
-            body: JSON.stringify({
-                "id": 252,
-                "createdOn": "2023-06-13 10:27:08",
-                "modifiedOn": "2023-06-13 10:27:08",
-                "createdBy": 38,
-                "modifiedBy": null,
-                "countryCode": "001",
-                "countryName": "IndiaDemo",
-                "dialingCode": "9785",
-                "regex": null,
-                "weekendDays": "2,1",
-                "active": true,
-                "ID_FIELD": "id"
-
-            })
-        };
-
-
-
-
-
-        const response = await fetch('https://projects.harvices.in/ticketingappapitest-uat/countryMST/update/', options)
-        const data = await response.json();
-        console.log(data)
-
-
-
-    }
+  
 
     return (
         <div className="container">
@@ -141,7 +107,7 @@ const CountryScreen = () => {
                     </div>
                 </div>
             </div>
-
+<CountryList/>
         </div>
     )
 }
