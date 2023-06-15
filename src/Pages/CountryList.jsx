@@ -28,7 +28,7 @@ const CountryList = ()=>{
     }
 
 useEffect(()=>{
-    // ViewList()
+    ViewList()
 },[])
 
 const[loading , setLoading]=useState()
