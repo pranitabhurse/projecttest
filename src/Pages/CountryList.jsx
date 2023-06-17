@@ -40,7 +40,7 @@ const [alertMessage, setAlertMessage] = useState();
 const[countryMSTId , setcountryMSTId]=useState()
 
 
-    const update = async (id) => {
+    const update = async (id , createdOn) => {
        
         setLoading(true)
 
@@ -55,13 +55,13 @@ const[countryMSTId , setcountryMSTId]=useState()
             },
             body: JSON.stringify({
                 "id": id,
-                "createdOn": "2023-06-13 10:27:08",
-                "modifiedOn": "2023-06-13 10:27:08",
+                "createdOn": createdOn,
+                "modifiedOn": new Date(),
                 "createdBy": 38,
                 "modifiedBy": null,
-                "countryCode": {citycode},
-                "countryName": {countryName},
-                "dialingCode": {countryMSTId},
+                "countryCode": citycode,
+                "countryName": countryName,
+                "dialingCode": countryMSTId,
                 "regex": null,
                 "weekendDays": "2,1",
                 "active": true,
@@ -110,7 +110,7 @@ const[countryMSTId , setcountryMSTId]=useState()
                                 <td><input value={item.countryName} onChange={(e)=>{setCountryName(e.target.value)}}/></td>
                                 <td><input value={item.cityCode} onChange={(e)=>{setCityCode(e.target.value)}}/>{item.cityCode}</td>
                                 <td><input value={item.countryMSTId} onChange={(e)=>{setcountryMSTId(e.target.value)}}/></td>
-                                <td><button onClick={()=>{update(item.id)}}>update</button></td>
+                                <td><button onClick={()=>{update(item.id , item.createdOn )}}>update</button></td>
                             </tr>
                         )
                     })}
